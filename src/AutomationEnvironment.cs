@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FluentAutomation
+﻿namespace FluentAutomation
 {
     public class AutomationEnvironment
     {
