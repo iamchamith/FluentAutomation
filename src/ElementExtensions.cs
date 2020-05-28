@@ -36,7 +36,20 @@ namespace FluentAutomation
                 throw;
             }
         }
-
+        public static IWebElement WaitUntilElementExistsLoop(this IWebDriver driver, By elementLocator, int timeout = 50)
+        {
+            while (true)
+            {
+                try
+                {
+                    return WaitUntilElementExists(driver, elementLocator, timeout);
+                }
+                catch (StaleElementReferenceException e)
+                {
+                    continue;
+                }
+            }
+        }
         public static IWebElement WaitUntilElementVisible(this IWebDriver driver, By elementLocator, int timeout = 50)
         {
             try
