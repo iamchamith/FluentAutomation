@@ -1,9 +1,7 @@
 ﻿using Dapper;
 using OpenQA.Selenium;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 
 namespace FluentAutomation
@@ -23,6 +21,7 @@ namespace FluentAutomation
         {
             Thread.Sleep((sleep.Is(0) ? AutomationTestConfig.Sleep : sleep) * 1000);
         }
+
         #region db executions
         public void ExecuteOnDb(string sql)
         {
