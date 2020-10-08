@@ -63,5 +63,9 @@ namespace FluentAutomation
 
             return result;
         }
+
+        public static void ClickConfirmYes(IWebDriver driver) {
+            driver.SwitchTo().Alert().Accept();
+        }
     }
 }

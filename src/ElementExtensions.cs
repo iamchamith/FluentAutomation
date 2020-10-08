@@ -2,8 +2,6 @@
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 
 namespace FluentAutomation
@@ -76,15 +74,12 @@ namespace FluentAutomation
                 throw;
             }
         }
-
-
-
         public static string GetValue(this IWebElement element)
         {
             return element.GetAttribute("value");
         }
 
-        public static string InnerHtml(this IWebElement element, IWebDriver driver)
+        public static string GetInnerHtmlValue(this IWebElement element, IWebDriver driver)
         {
             bool staleElement = true;
             var innerHtml = string.Empty;
@@ -133,6 +128,32 @@ namespace FluentAutomation
                 index++;
             }
             return element;
+        }
+
+
+        public static void SelectItemFromDropDown(this IWebElement element, string text) {
+
+            var selectElement = new SelectElement(element);
+            selectElement.SelectByText(text);
+        }
+        public static void ClearAndSendKey(this IWebElement element,string newValue) {
+            element.Clear();
+            element.SendKeys(newValue);
+        }
+        public static void MoveUp(this IWebDriver driver) {
+
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("window.scrollTo(0, 0)");
+        }
+        public static void MoveDown(this IWebDriver driver)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight)");
+        }
+
+        public static By ByAttribute(string attribute,string value) {
+
+            return By.XPath($"//*[@{attribute}='{value}']");
         }
     }
 }

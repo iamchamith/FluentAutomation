@@ -6,8 +6,8 @@ namespace FluentAutomation
         IWebElement Filter { get; set; }
         IWebElement CreateNew { get; set; }
         Me Bind();
-        Me ViewInfoByIndex(int index = 0);
+        Me ViewInfoByIndex(string index = "0");
         Me DoFilter(string query);
-        Me DoCreateNew();
+        Me ClickCreateNew();
     }
 }

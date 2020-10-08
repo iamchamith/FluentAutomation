@@ -28,9 +28,6 @@ namespace FluentAutomation
         {
             Thread.Sleep(sec * 1000);
         }
-
-
-
         protected void StartWith(string item1, string item2)
         {
             if (!(item1.StartsWith(item2) || item2.StartsWith(item1)))
@@ -80,6 +77,13 @@ namespace FluentAutomation
         public virtual void Logout()
         {
             Helper.RunJs(_driver, Helper.ClearBrowserLocalStorageScript);
+        }
+
+        public void AssertInnerHtml(string id,string compareValue)
+        {
+            string.Equals(_driver.WaitUntilElementExists(By.Id(id))
+                 .GetInnerHtmlValue(_driver), compareValue, StringComparison.InvariantCultureIgnoreCase);
+
         }
     }
 }
