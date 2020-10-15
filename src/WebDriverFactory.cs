@@ -45,15 +45,6 @@ namespace FluentAutomation
             ChromeDriverService chromeService = ChromeDriverService.CreateDefaultService(AutomationTestConfig.WebDriverLocation);
             chromeService.HideCommandPromptWindow = true;
             var options = new ChromeOptions();
-
-            //var mobileEmulationSettings = new ChromeMobileEmulationDeviceSettings
-            //{
-            //    UserAgent = emulatorSettings.DeviceUserAgent,
-            //    Width = emulatorSettings.DeviceWidth,
-            //    Height = emulatorSettings.DeviceHeight,
-            //    EnableTouchEvents = true,
-            //    PixelRatio = emulatorSettings.DevicePixelRatio
-            //};
             options.EnableMobileEmulation($"{cnf.Device.GetDescription()}");
             return new ChromeDriver(chromeService, options);
         }
