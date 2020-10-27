@@ -7,6 +7,5 @@
         IUpdateMangePage<ViewModel, Me>
         where ViewModel : class
     {
-
     }
 }
