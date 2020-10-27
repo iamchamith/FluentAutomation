@@ -3,9 +3,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 
-namespace FluentAutomation
+namespace FluentAutomation.Utility
 {
-    public static class CommanExtensions
+    public static class CommonExtensions
     {
         public static string TrimAndToLower(this string value)
         {

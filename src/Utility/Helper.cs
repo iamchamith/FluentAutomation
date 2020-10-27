@@ -1,8 +1,9 @@
 ﻿using OpenQA.Selenium;
 using System;
 using System.Text;
+using System.Threading;
 
-namespace FluentAutomation
+namespace FluentAutomation.Utility
 {
     public class Helper
     {
@@ -65,7 +66,9 @@ namespace FluentAutomation
         }
 
         public static void ClickConfirmYes(IWebDriver driver) {
+            Thread.Sleep(1000);
             driver.SwitchTo().Alert().Accept();
+            Thread.Sleep(1000);
         }
     }
 }

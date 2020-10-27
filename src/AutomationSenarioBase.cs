@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using FluentAutomation.Utility;
+using FluentAutomation.WebDriver;
 using OpenQA.Selenium;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +8,11 @@ using System.Threading;
 
 namespace FluentAutomation
 {
-    public class AutomationBase
+    public class AutomationSenarioBase
     {
         protected IWebDriver _driver;
         WebDriverFactory _webDriverFactory;
-        public AutomationBase(AutomationEnvironment cnf = null)
+        public AutomationSenarioBase(AutomationEnvironment cnf = null)
         {
             cnf = cnf ?? AutomationTestConfig.Env;
             _webDriverFactory = new WebDriverFactory();

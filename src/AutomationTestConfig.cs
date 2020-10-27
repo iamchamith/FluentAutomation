@@ -1,4 +1,6 @@
-﻿using static FluentAutomation.AutomationEnums;
+﻿using FluentAutomation.WebDriver;
+using static FluentAutomation.Utility.AutomationEnums;
+
 namespace FluentAutomation
 {
     public class AutomationTestConfig
@@ -9,7 +11,7 @@ namespace FluentAutomation
         public static string DbConnectionString { get; private set; }
         public static string Host { get; private set; }
         public static string ApiDomain { get; private set; }
-        public static AutomationEnvironment Env { get; set; } = new AutomationEnvironment(new BrowserConfig(AutomationEnums.Browser.Chrome, Device.Laptop, Resalution.None));
+        public static AutomationEnvironment Env { get; set; } = new AutomationEnvironment(new BrowserConfig(Browser.Chrome, Device.Laptop, Resalution.None));
 
 
         public static void ConfigureConfigs(string host, string api, string connectionstring)

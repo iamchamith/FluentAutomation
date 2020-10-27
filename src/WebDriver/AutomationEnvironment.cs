@@ -1,4 +1,4 @@
-﻿namespace FluentAutomation
+﻿namespace FluentAutomation.WebDriver
 {
     public class AutomationEnvironment
     {

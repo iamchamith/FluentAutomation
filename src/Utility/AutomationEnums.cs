@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace FluentAutomation
+namespace FluentAutomation.Utility
 {
     public class AutomationEnums
     {

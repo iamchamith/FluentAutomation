@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAutomation.Utility;
+using OpenQA.Selenium;
 using System;
 using System.Threading;
 using Xunit.Abstractions;
@@ -82,6 +83,12 @@ namespace FluentAutomation
         public void AssertInnerHtml(string id,string compareValue)
         {
             string.Equals(_driver.WaitUntilElementExists(By.Id(id))
+                 .GetInnerHtmlValue(_driver), compareValue, StringComparison.InvariantCultureIgnoreCase);
+
+        }
+        public void AssertInnerHtml(string element,string value, string compareValue)
+        {
+            string.Equals(_driver.WaitUntilElementExists(ElementExtensions.ByAttribute(element, value))
                  .GetInnerHtmlValue(_driver), compareValue, StringComparison.InvariantCultureIgnoreCase);
 
         }

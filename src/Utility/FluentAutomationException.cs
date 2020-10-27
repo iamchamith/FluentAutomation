@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FluentAutomation
+namespace FluentAutomation.Utility
 {
     public class FluentAutomationException : Exception
     {

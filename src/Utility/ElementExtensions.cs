@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
 
-namespace FluentAutomation
+namespace FluentAutomation.Utility
 {
     public static class ElementExtensions
     {

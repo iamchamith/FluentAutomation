@@ -1,6 +1,6 @@
-﻿using static FluentAutomation.AutomationEnums;
+﻿using static FluentAutomation.Utility.AutomationEnums;
 
-namespace FluentAutomation
+namespace FluentAutomation.WebDriver
 {
     public class BrowserConfig
     {

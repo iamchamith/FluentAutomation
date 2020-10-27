@@ -1,11 +1,12 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAutomation.Utility;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using System;
 
-namespace FluentAutomation
+namespace FluentAutomation.WebDriver
 {
     public class WebDriverFactory
     {
